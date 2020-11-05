@@ -11,8 +11,10 @@ public class TestSpring {
 //        TestBean testBean = classPathXmlApplicationContext.getBean("testBean", TestBean.class);
         //у объекта контекста вызываем метод для получаения бина (объекта) по id класса TestBean и присваиваем ссылке testBean
 
-       Music music = classPathXmlApplicationContext.getBean("musicBean", Music.class);
-       MusicPlayer musicPlayer = new MusicPlayer(music);
+//       Music music = classPathXmlApplicationContext.getBean("musicBean", Music.class);
+//       MusicPlayer musicPlayer = new MusicPlayer(music);
+
+        MusicPlayer musicPlayer = classPathXmlApplicationContext.getBean("musicPlayer", MusicPlayer.class);
        musicPlayer.playMusic();// вызываем метод у объекта
         classPathXmlApplicationContext.close(); //закрываем context
     }

@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="urunova.spring.JazzMusic "> <!--    прописываем класс, объект которого спринг должен создать-->
+          class="urunova.spring.RockMusic "> <!--    прописываем класс, объект которого спринг должен создать-->
 <!--        <constructor-arg value="Udar"/> &lt;!&ndash;тут передаем конструктору объекта значение name &ndash;&gt;-->
     </bean>
 

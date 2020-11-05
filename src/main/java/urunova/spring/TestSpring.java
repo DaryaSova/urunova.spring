@@ -16,7 +16,7 @@ public class TestSpring {
 
         MusicPlayer musicPlayer = classPathXmlApplicationContext.getBean("musicPlayer", MusicPlayer.class);
        musicPlayer.playMusic();// вызываем метод у объекта
-        classPathXmlApplicationContext.close(); //закрываем context
+         classPathXmlApplicationContext.close(); //закрываем context
     }
 }
 

@@ -8,15 +8,19 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="urunova.spring.RockMusic "> <!--    прописываем класс, объект которого спринг должен создать-->
-<!--        <constructor-arg value="Udar"/> &lt;!&ndash;тут передаем конструктору объекта значение name &ndash;&gt;-->
+          class="urunova.spring.JazzMusic "> <!--    прописываем класс, объект которого спринг должен создать-->
     </bean>
 
     <bean id="musicPlayer"
           class="urunova.spring.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+       <property name="music" ref="musicBean"/> <!--тут мы в поле name указали наш setter (на самом деле он называется setMusic,
+       но java убирает слово set и первую букву ставит в нижний регистр) и ref указывает на объект который передаем в этот setter -->
+
 
     </bean>
+<!--    <bean>-->
+<!--        &lt;!&ndash;        <constructor-arg value="Udar"/> &lt;!&ndash;тут передаем конструктору объекта значение name &ndash;&gt;&ndash;&gt;-->
+<!--    </bean>-->
 
 
 </beans>

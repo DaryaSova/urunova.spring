@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
     <bean id="musicBean"
           class="urunova.spring.JazzMusic "> <!--    прописываем класс, объект которого спринг должен создать-->
     </bean>
@@ -15,8 +17,8 @@
           class="urunova.spring.MusicPlayer">
        <property name="music" ref="musicBean"/> <!--тут мы в поле name указали наш setter (на самом деле он называется setMusic,
        но java убирает слово set и первую букву ставит в нижний регистр) и ref указывает на объект который передаем в этот setter -->
-        <property name="name" value="some name"/>
-        <property name="volume" value="50"/>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
 
 
     </bean>

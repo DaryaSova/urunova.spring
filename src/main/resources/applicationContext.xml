@@ -15,6 +15,8 @@
           class="urunova.spring.MusicPlayer">
        <property name="music" ref="musicBean"/> <!--тут мы в поле name указали наш setter (на самом деле он называется setMusic,
        но java убирает слово set и первую букву ставит в нижний регистр) и ref указывает на объект который передаем в этот setter -->
+        <property name="name" value="some name"/>
+        <property name="volume" value="50"/>
 
 
     </bean>

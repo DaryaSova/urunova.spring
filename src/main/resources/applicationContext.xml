@@ -9,14 +9,28 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean"
+    <bean id="musicBean1"
           class="urunova.spring.JazzMusic "> <!--    прописываем класс, объект которого спринг должен создать-->
+    </bean>
+
+    <bean id="musicBean2"
+        class="urunova.spring.ClassicalMusic ">
+    </bean>
+
+    <bean id="musicBean3"
+        class="urunova.spring.RockMusic ">
     </bean>
 
     <bean id="musicPlayer"
           class="urunova.spring.MusicPlayer">
-       <property name="music" ref="musicBean"/> <!--тут мы в поле name указали наш setter (на самом деле он называется setMusic,
-       но java убирает слово set и первую букву ставит в нижний регистр) и ref указывает на объект который передаем в этот setter -->
+       <property name="musicList">
+                 <list>
+                     <ref bean="musicBean1"/>
+                     <ref bean="musicBean2"/>
+                     <ref bean="musicBean3"/>
+                 </list>
+       </property>
+
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
 

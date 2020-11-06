@@ -1,7 +1,12 @@
 package urunova.spring;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
     private Music music; //сможем играть музыку любого жанра
+
+    private List<Music> musicList= new ArrayList<>();
 
     private String name;
     private int volume; //громкость
@@ -34,6 +39,13 @@ public class MusicPlayer {
     }
 
     public void playMusic () {
-        System.out.println("Playing  " + music.getSong());
+        for (Music music : musicList ) {
+            System.out.println("Playing  " + music.getSong());
+        }
+    }
+
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
     }
 }

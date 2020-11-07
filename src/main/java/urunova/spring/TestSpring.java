@@ -14,11 +14,22 @@ public class TestSpring {
 //       Music music = classPathXmlApplicationContext.getBean("musicBean", Music.class);
 //       MusicPlayer musicPlayer = new MusicPlayer(music);
 
-       MusicPlayer musicPlayer = classPathXmlApplicationContext.getBean("musicPlayer", MusicPlayer.class);
-       musicPlayer.playMusic();// вызываем метод у объекта
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+       MusicPlayer firstmusicPlayer = classPathXmlApplicationContext.getBean("musicPlayer", MusicPlayer.class);
+       MusicPlayer secondmusicPlayer = classPathXmlApplicationContext.getBean("musicPlayer", MusicPlayer.class);
 
+       boolean c = firstmusicPlayer == secondmusicPlayer;
+//
+        System.out.println(c);
+        System.out.println(firstmusicPlayer);
+        System.out.println(secondmusicPlayer);
+
+        firstmusicPlayer.setVolume(10);
+        System.out.println(firstmusicPlayer.getVolume());
+        System.out.println(secondmusicPlayer.getVolume());
+
+//        musicPlayer.playMusic();// вызываем метод у объекта
+//        System.out.println(musicPlayer.getName());
+//        System.out.println(musicPlayer.getVolume());
 
          classPathXmlApplicationContext.close(); //закрываем context
     }

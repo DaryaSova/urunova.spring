@@ -9,30 +9,20 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean1"
-          class="urunova.spring.JazzMusic "> <!--    прописываем класс, объект которого спринг должен создать-->
-    </bean>
+    <bean id="musicBean"
+          class="urunova.spring.ClassicalMusic "
+          init-method="doMyInit"
+          destroy-method="doDestroyInit">
 
-    <bean id="musicBean2"
-        class="urunova.spring.ClassicalMusic ">
-    </bean>
-
-    <bean id="musicBean3"
-        class="urunova.spring.RockMusic ">
     </bean>
 
     <bean id="musicPlayer"
-          class="urunova.spring.MusicPlayer">
-       <property name="musicList">
-                 <list>
-                     <ref bean="musicBean1"/>
-                     <ref bean="musicBean2"/>
-                     <ref bean="musicBean3"/>
-                 </list>
-       </property>
+          class="urunova.spring.MusicPlayer"
+            scope="prototype">
+       <property name="music" ref="musicBean"/>
 
         <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
+        <property name="volume" value="57"/>
 
 
     </bean>

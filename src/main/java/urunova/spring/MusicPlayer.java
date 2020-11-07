@@ -6,7 +6,16 @@ import java.util.List;
 public class MusicPlayer {
     private Music music; //сможем играть музыку любого жанра
 
-    private List<Music> musicList= new ArrayList<>();
+//    private List<Music> musicList= new ArrayList<>();
+
+    public void playMusic () {
+            System.out.println("Playing  " + music.getSong());
+    }
+
+
+//    public void setMusicList(List<Music> musicList) {
+//        this.musicList = musicList;
+//    }
 
     private String name;
     private int volume; //громкость
@@ -38,14 +47,5 @@ public class MusicPlayer {
         this.music = music;
     }
 
-    public void playMusic () {
-        for (Music music : musicList ) {
-            System.out.println("Playing  " + music.getSong());
-        }
-    }
 
-
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
 }

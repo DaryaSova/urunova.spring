@@ -8,16 +8,21 @@ import java.util.List;
 
 @Component
 public class MusicPlayer {
-    private ClassicalMusic classicalMusic; //сможем играть музыку любого жанра
+    private Music music; //сможем играть музыку любого жанра
 
     //IoC
+
+    public MusicPlayer (Music music) {
+        this.music = music;
+    }
+
     @Autowired
-    public MusicPlayer (ClassicalMusic classicalMusic) {
-        this.classicalMusic = classicalMusic;
+    public void setMusic(Music music) {
+        this.music = music;
     }
 
     public void playMusic () {
-            System.out.println("Playing  " + classicalMusic.getSong());
+            System.out.println("Playing  " + music.getSong());
     }
 
 

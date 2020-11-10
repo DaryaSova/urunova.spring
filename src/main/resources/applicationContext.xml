@@ -12,18 +12,20 @@
     <bean id="musicBean"
           class="urunova.spring.ClassicalMusic "
           init-method="doMyInit"
-          destroy-method="doDestroyInit">
-
+          destroy-method="doDestroyInit"
+          factory-method="getClassicalMusic"  >
     </bean>
 
     <bean id="musicPlayer"
           class="urunova.spring.MusicPlayer"
-            scope="prototype">
+            scope="prototype"
+          init-method="init"
+          destroy-method="des">
+
        <property name="music" ref="musicBean"/>
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="57"/>
-
 
     </bean>
 <!--    <bean>-->

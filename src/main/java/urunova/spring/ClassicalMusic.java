@@ -1,6 +1,12 @@
 package urunova.spring;
 
 public class ClassicalMusic  implements Music{
+    private ClassicalMusic () {}//ограничиваем создания класса
+
+    public static ClassicalMusic getClassicalMusic () {
+        return new ClassicalMusic();
+    }
+
     public void doMyInit () {
         System.out.println("Doing my initialization");
     }

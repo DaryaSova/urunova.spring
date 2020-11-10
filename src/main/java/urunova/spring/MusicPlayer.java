@@ -47,5 +47,13 @@ public class MusicPlayer {
         this.music = music;
     }
 
+    public void init () {
+        System.out.println("init");
+    }
+
+    public void des () {
+        System.out.println("des");
+    }
+
 
 }

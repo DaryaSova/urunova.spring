@@ -8,8 +8,15 @@ import java.util.List;
 
 @Component
 public class MusicPlayer {
+
+    private ClassicalMusic classicalMusic;
+    private JazzMusic jazzMusic;
+
     @Autowired
-    private Music music; //сможем играть музыку любого жанра
+    public MusicPlayer(ClassicalMusic classicalMusic, JazzMusic jazzMusic) {// внедрили 2 зависимости
+        this.classicalMusic = classicalMusic;
+        this.jazzMusic = jazzMusic;
+    }
 
     //IoC
 
@@ -18,7 +25,8 @@ public class MusicPlayer {
 //    }
 
     public void playMusic () {
-            System.out.println("Playing  " + music.getSong());
+            System.out.println("Playing  " + classicalMusic.getSong());
+            System.out.println("Playing  " + jazzMusic.getSong());
     }
 
 

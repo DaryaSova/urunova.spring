@@ -1,5 +1,8 @@
 package urunova.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component ("classicalMusic")
 public class ClassicalMusic  implements Music{
     private ClassicalMusic () {}//ограничиваем создания класса
 

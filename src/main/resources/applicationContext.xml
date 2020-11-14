@@ -10,6 +10,6 @@
    <context:component-scan base-package="urunova.spring"/>
 <!--    с этого файла будет сканирование -->
 
-
+<context:property-placeholder location="classpath:musicPlayer.properties"/>
 
 </beans>

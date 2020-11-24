@@ -1,22 +1,20 @@
 package urunova.spring;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+//      ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        MusicPlayer musicPlayer = classPathXmlApplicationContext.getBean("musicPlayer", MusicPlayer.class);
-
-//        musicPlayer.playMusic(MusicGenre.CLASSICAL);
-//        musicPlayer.playMusic(MusicGenre.ROCK);
-
-        ClassicalMusic classicalMusic = classPathXmlApplicationContext.getBean("classicalMusic", ClassicalMusic.class);
-        ClassicalMusic classicalMusic2 = classPathXmlApplicationContext.getBean("classicalMusic", ClassicalMusic.class);
+        ClassicalMusic classicalMusic = context.getBean("classicalMusic", ClassicalMusic.class);
+        ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
 
         System.out.println(classicalMusic == classicalMusic2);
 
-         classPathXmlApplicationContext.close(); //закрываем context
+         context.close(); //закрываем context
     }
 }
 

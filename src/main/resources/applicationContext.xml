@@ -7,9 +7,9 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-   <context:component-scan base-package="urunova.spring"/>
-<!--    с этого файла будет сканирование -->
+<!--   <context:component-scan base-package="urunova.spring"/>-->
+<!--&lt;!&ndash;    с этого файла будет сканирование &ndash;&gt;-->
 
-<context:property-placeholder location="classpath:musicPlayer.properties"/>
+<!--<context:property-placeholder location="classpath:musicPlayer.properties"/>-->
 
 </beans>

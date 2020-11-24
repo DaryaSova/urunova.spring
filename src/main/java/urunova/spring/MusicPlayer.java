@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
+//@Component
 
 public class MusicPlayer {
 
@@ -35,26 +35,18 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    private ClassicalMusic classicalMusic;
-    private RockMusic rockMusic;
+    private Music music1;
+    private Music music2;
 
-    @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
+
+//    @Autowired
+    public MusicPlayer(@Qualifier("rockMusic") Music music1, @Qualifier("classicalMusic") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
     }
 
-    public void playMusic (MusicGenre musicGenre) {
-        Random random = new Random();
-
-        //случайное число между 0 и 2
-        int randomNumber = random.nextInt(3);
-
-        if (musicGenre == MusicGenre.CLASSICAL) {
-            System.out.println(classicalMusic.getSong().get(randomNumber));
-        } else {
-            System.out.println(rockMusic.getSong().get(randomNumber));
-        }
+    public String playMusic () {
+        return "Playing " + music1.getSong() + " and " + music2.getSong();
 
     }
 

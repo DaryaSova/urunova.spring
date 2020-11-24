@@ -8,29 +8,14 @@ import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-@Scope("singleton")
+//@Component
+//@Scope("singleton")
 public class ClassicalMusic  implements Music{
-    private List <String> songs = new ArrayList<>();
-    {
-        songs.add("Hungarian Rhapsody");
-        songs.add("Symphony no. 5 in C Minor, op. 67");
-        songs.add("Night on Bald Mountain");
-    }
-
-
-    private ClassicalMusic () {
-    }
-
-    public static ClassicalMusic getClassicalMusic () {
-        return new ClassicalMusic();
-    }
-
 
 
     @Override
-    public List<String> getSong() {
-        return songs;
+    public String getSong() {
+        return "Hug";
     }
 
     @PostConstruct
